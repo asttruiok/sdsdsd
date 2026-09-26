@@ -28,6 +28,7 @@ if(gal){const pick=IDS.slice().sort(()=>Math.random()-.5).slice(0,20);const R=C.
 const handle=CFG.x.replace(/^@/,"");
 const postId=(CFG.post.match(/status\/(\d+)/)||[])[1]||"";
 const prof="https://x.com/"+encodeURIComponent(handle);
+if($("#panel")){
 $("#followBtn").href="https://x.com/intent/follow?screen_name="+encodeURIComponent(handle);
 if(postId){
   $("#likeBtn").href="https://x.com/intent/like?tweet_id="+postId;
@@ -93,9 +94,14 @@ $("#walletForm").addEventListener("submit",async e=>{e.preventDefault();const v=
   }catch(x){err.textContent="Network error. Check your connection and try again.";reset()}
 });
 
-function route(){const wl=location.hash==="#whitelist";$("#home-view").hidden=wl;$("#wl-view").hidden=!wl;
-  if(wl){window.scrollTo(0,0);render()}
-  else if(location.hash&&location.hash!=="#home"){const t=document.querySelector(location.hash);if(t)setTimeout(()=>t.scrollIntoView({behavior:reduce?"auto":"smooth"}),30)}
-  else if(location.hash==="#home")window.scrollTo({top:0,behavior:reduce?"auto":"smooth"})}
-window.addEventListener("hashchange",route);route();render();
+render();
+}
+
+function scrollToId(id,smooth){if(id==="home"||id===""){window.scrollTo({top:0,behavior:smooth&&!reduce?"smooth":"auto"});return}
+  const t=document.getElementById(id);if(t)t.scrollIntoView({behavior:smooth&&!reduce?"smooth":"auto"})}
+document.addEventListener("click",e=>{const l=e.target.closest('a[href^="#"]');if(!l)return;e.preventDefault();scrollToId(l.getAttribute("href").slice(1),true)});
+function cleanHash(){if(!location.hash)return;const h=location.hash.slice(1);
+  if(h==="whitelist"&&!$("#panel")){location.replace("whitelist/");return}
+  history.replaceState(null,"",location.pathname+location.search);if($("#home-view"))setTimeout(()=>scrollToId(h,false),60)}
+cleanHash();window.addEventListener("hashchange",cleanHash);
 })();

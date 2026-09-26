@@ -4,7 +4,8 @@ const HANDLE=((window.CHAPRI_CONFIG||{}).x||"CHAPRINFT_").replace(/^@/,"");
 const INK="#140E0B";
 const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=s=>document.querySelector(s);
-const src=id=>"assets/nft/"+id+".webp";
+const BASE=document.documentElement.getAttribute("data-base")||"";
+const src=id=>BASE+"assets/nft/"+id+".webp";
 const CFG=window.CHAPRI_CONFIG||{};
 const SITE=CFG.site||"";
 
