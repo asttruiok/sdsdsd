@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Chapri</title>
+<meta name="description" content="Chapri. 3,000 Chapris, free mint on Robinhood Chain. Every move he makes is a loss. Feed him grass, turn him into a cow.">
+<meta property="og:title" content="Chapri">
+<meta property="og:description" content="3,000 Chapris. Free mint on Robinhood Chain. Buys high. Sells low. Every time.">
+<meta property="og:image" content="assets/nft/2.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CHAPRINFT_">
+<link rel="icon" href="assets/nft/2.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Chivo:wght@400;600;800&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="#home"><img src="assets/nft/2.webp" alt="Chapri logo"><span>CHAPRI</span></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#feed">Feed</a>
+      <a href="#zoo">Zoo</a>
+      <a href="#loss">Loss</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#whitelist">Join Whitelist</a>
+  </div>
+</header>
+
+<canvas id="confetti"></canvas>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<main id="home-view">
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" data-mq="0"></div></div>
+
+  <div class="wrap hero" id="home">
+    <div>
+      <span class="eyebrow pixel">Free mint &middot; 3,000 Chapris &middot; Robinhood Chain</span>
+      <h1 class="title" aria-label="Chapri"><span>C</span><span>H</span><span>A</span><span>P</span><span>R</span><span>I</span></h1>
+      <p class="lede">He buys high. He sells low. Whatever he does, he loses. So we made him a <mark>FREE MINT</mark>. 3,000 of him are coming to Robinhood Chain.</p>
+      <div class="cta-row">
+        <a class="btn" href="#whitelist">Join the Free Mint Whitelist</a>
+        <a class="btn white" href="#zoo">Turn him into a cow</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>3,000</b><small>Total supply</small></div>
+        <div class="fact"><b>Robinhood</b><small>Chain</small></div>
+        <div class="fact"><b>Soon&trade;</b><small>Mint date</small></div>
+        <div class="fact free"><b>FREE</b><small>Mint price</small></div>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="bubble" id="heroBubble">gm. bought the top again.</div>
+      <button class="hero-pic" id="heroTap" type="button" aria-label="Tap the Chapri"><img id="heroImg" src="assets/nft/751.webp" alt="A Chapri"></button>
+      <span class="sticker s1 pixel" id="heroPnl">PnL: -87%</span>
+      <span class="sticker s2 pixel">Tap him</span>
+    </div>
+  </div>
+
+  <div class="marquee alt" aria-hidden="true"><div class="marquee-track" data-mq="3"></div></div>
+
+  <section id="feed">
+    <div class="wrap feed">
+      <div class="feed-stage">
+        <div class="feed-card" id="feedCard">
+          <canvas id="feedCanvas" width="800" height="800" aria-label="A hungry Chapri"></canvas>
+        </div>
+      </div>
+      <div class="feed-copy">
+        <span class="eyebrow pixel">Touch grass simulator</span>
+        <h2>Feed him <span class="hl">grass</span></h2>
+        <p>Doctors say he needs grass. Tap a tuft and throw it in his mouth. Ten bites and something terrible happens.</p>
+        <div class="tray" id="tray" aria-label="Grass tufts"></div>
+        <div class="counter"><b id="grassCount">0</b><span class="pixel">/ 10 grass eaten</span></div>
+        <div class="progress" aria-hidden="true"><i id="grassBar"></i></div>
+        <p class="react" id="react">He looks at the grass like it is a red candle.</p>
+        <div class="done-row" id="feedDone" hidden>
+          <button class="btn lime" type="button" id="feedDl">Download cow</button>
+          <button class="btn sky" type="button" id="feedShare">Share on X</button>
+          <button class="btn white" type="button" id="feedAgain">Feed another</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zoo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow pixel">Chapri zoo</span><h2>Make him an <span class="hl">animal</span></h2></div>
+        <p>Pick a Chapri, pick an animal, drag the costume onto his face. Download it and flex it on X.</p>
+      </div>
+      <div class="zoo">
+        <div class="zoo-stage">
+          <div class="zoo-card" id="zooCard"><canvas id="zooCanvas" width="800" height="800" aria-label="Chapri animal maker preview"></canvas></div>
+          <p class="zoo-hint pixel">Drag on the picture to move the costume</p>
+        </div>
+        <div class="panel-box">
+          <div><h3>1. Pick your Chapri</h3><div class="thumbs" id="thumbs"></div></div>
+          <div><h3>2. Pick an animal</h3><div class="animals" id="animals"></div></div>
+          <div class="ctrl"><label for="zSize">Costume size</label><input type="range" id="zSize" min="70" max="140" value="100"></div>
+          <div class="ctrl"><label for="zCap">Top text</label><input class="inp" id="zCap" maxlength="18" autocomplete="off" value="MOO"></div>
+          <div class="actions">
+            <button class="btn white" type="button" id="zRandom">Random</button>
+            <button class="btn white" type="button" id="zReset">Reset position</button>
+          </div>
+          <div class="actions">
+            <button class="btn lime" type="button" id="zDl">Download image</button>
+            <button class="btn sky" type="button" id="zShare">Share on X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loss">
+    <div class="wrap roast">
+      <div class="roast-stage">
+        <div class="roast-card" id="lossCard"><img id="lossImg" src="assets/nft/751.webp" alt="A Chapri about to make a move"><div class="flames"></div></div>
+      </div>
+      <div>
+        <span class="eyebrow pixel">Loss machine</span>
+        <h2>Make a move</h2>
+        <p class="pixel move-label">His move</p>
+        <p class="move" id="lossMove">Press the button. He will try something.</p>
+        <p class="pixel move-label">Result</p>
+        <p class="roast-line" id="lossResult">It will not go well.</p>
+        <div class="pnl-row"><span class="pnl-box"><span class="pixel">PnL</span><b id="pnl">0%</b></span><span class="pnl-box"><span class="pixel">Moves lost</span><b id="lossTotal">0</b></span></div>
+        <div class="actions">
+          <button class="btn" type="button" id="lossBtn">Make a move</button>
+          <a class="btn sky" id="lossShare" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Share the loss</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow pixel">The Chapri wall</span><h2>Meet the <span class="hl">gang</span></h2></div>
+        <p>Tap a card to see what he tried. Spoiler: it did not work.</p>
+      </div>
+      <div class="gallery" id="gal"></div>
+      <p class="hint pixel">Tap any card to flip it</p>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow pixel">The plan</span><h2>Roadmap <span class="hl">(we tried)</span></h2></div>
+        <p>Five steps. The Chapri wrote it himself, so please be kind.</p>
+      </div>
+      <div class="road">
+        <div class="step"><span class="num">1</span><h3>Whitelist opens</h3><p>Do the X tasks, drop your wallet, become a certified Chapri.</p><span class="state now pixel">Live now</span></div>
+        <div class="step"><span class="num">2</span><h3>GTD raffle</h3><p>GTD free mint spots get raffled from the whitelist. Pure luck. Pray to the nose.</p><span class="state pixel">Next</span></div>
+        <div class="step"><span class="num">3</span><h3>Mint day</h3><p>3,000 Chapris. Free mint on Robinhood Chain. Date drops on X first.</p><span class="state pixel">Soon&trade;</span></div>
+        <div class="step"><span class="num">4</span><h3>PFP takeover</h3><p>Change your PFP. Confuse your family. Watch the timeline fill with Chapris.</p><span class="state pixel">Later</span></div>
+        <div class="step"><span class="num">5</span><h3>Touch grass</h3><p>Optional. Feeding him grass on this site counts.</p><span class="state pixel">Maybe</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow pixel">Questions</span><h2>FAQ <span class="hl">(frequently avoided)</span></h2></div>
+      </div>
+      <div class="faq">
+        <details open><summary>What is Chapri?</summary><p>Chapri is a meme PFP collection of 3,000 NFTs on Robinhood Chain. Every Chapri has his own drip, his own attitude and the same terrible trading skills.</p></details>
+        <details><summary>Which network?</summary><p>Robinhood Chain.</p></details>
+        <details><summary>How do I get whitelisted?</summary><p>Open the whitelist page, follow @CHAPRINFT_ on X, like and repost the post, comment on it, then submit your X username, your comment link and your EVM wallet. Takes about two minutes.</p></details>
+        <details><summary>What is GTD and who gets it?</summary><p>GTD means guaranteed mint. GTD access will be decided by a raffle among whitelisted Chapris. Winners are announced on X.</p></details>
+        <details><summary>How much is mint?</summary><p>Free. You only pay network gas. The only mint where the Chapri cannot lose money. He will still find a way.</p></details>
+        <details><summary>When is mint?</summary><p>Soon. The exact date drops on X first. Turn on notifications for @CHAPRINFT_.</p></details>
+        <details><summary>Utility?</summary><p>You can feed him grass, turn him into a cow and watch him lose money on every move. Also memes, community and a PFP your friends will ask questions about.</p></details>
+        <details><summary>Is this financial advice?</summary><p>No. Chapri is a meme NFT made just for fun. It is not part of any other project, and there is no profit to be made from it. The Chapri cannot even manage his own money.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" data-mq="6"></div></div>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Free mint. <span class="hl">Zero excuses.</span></h2>
+      <p>3,000 Chapris. Free mint on Robinhood Chain. The whitelist is open and the nose is waiting.</p>
+      <a class="btn" href="#whitelist">Join the Free Mint Whitelist</a>
+    </div>
+  </section>
+</main>
+
+<main id="wl-view" hidden>
+  <div class="marquee alt" aria-hidden="true"><div class="marquee-track" data-mq="2"></div></div>
+  <div class="wrap" id="wl">
+    <div class="wl-grid">
+      <div class="wl-side wl-intro">
+        <span class="eyebrow pixel">Chapri whitelist</span>
+        <h1>Get on the list, ser.</h1>
+        <p>Free mint whitelist. Finish every task in order. Each one unlocks the next. Fake links get you nowhere. The nose knows.</p>
+      </div>
+      <div class="wl-side wl-cube">
+        <div class="cube-zone" aria-hidden="true">
+          <div class="cube">
+            <img src="assets/nft/3.webp" alt=""><img src="assets/nft/758.webp" alt=""><img src="assets/nft/1501.webp" alt=""><img src="assets/nft/4.webp" alt=""><img src="assets/nft/1509.webp" alt=""><img src="assets/nft/2260.webp" alt="">
+          </div>
+        </div>
+        <a class="btn white" href="#home">Back to home</a>
+      </div>
+
+      <div class="panel" id="panel">
+        <div class="panel-top">
+          <span class="pixel" id="lvlText">Chapri level 0/5</span>
+          <div class="lvl" aria-hidden="true"><i id="lvlBar"></i></div>
+        </div>
+        <div class="tasks" id="tasks">
+          <div class="task" data-step="1">
+            <div class="task-head"><div class="task-no"><b>1</b></div><div><h3>Follow @CHAPRINFT_</h3><p class="sub">Required. No follow, no Chapri.</p></div></div>
+            <p class="done-line">Followed. Welcome to the family.</p>
+            <div class="task-body">
+              <div class="row"><a class="btn sky" id="followBtn" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Follow on X</a></div>
+              <p class="wait" id="followWait">Follow first, then come back here.</p>
+              <div class="row"><button class="btn" id="followOk" type="button" disabled>I followed, continue</button></div>
+            </div>
+          </div>
+          <div class="task locked" data-step="2">
+            <div class="task-head"><div class="task-no"><b>2</b></div><div><h3>Your X username</h3><p class="sub">The account you just followed with.</p></div></div>
+            <p class="done-line" id="userDone">Saved.</p>
+            <form class="task-body" id="userForm" novalidate>
+              <label class="lbl" for="xuser">X username</label>
+              <input class="inp" id="xuser" name="xuser" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="@yourname" maxlength="16">
+              <p class="err" id="userErr"></p>
+              <div class="row"><button class="btn" type="submit">Save username</button></div>
+            </form>
+          </div>
+          <div class="task locked" data-step="3">
+            <div class="task-head"><div class="task-no"><b>3</b></div><div><h3>Like and repost</h3><p class="sub" id="lrSub">Show the post some love. Both are required.</p></div></div>
+            <p class="done-line">Liked and reposted. Legendary.</p>
+            <div class="task-body">
+              <div class="row">
+                <a class="btn white" id="likeBtn" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Like the post</a>
+                <a class="btn white" id="rtBtn" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Repost the post</a>
+              </div>
+              <label class="check" for="lrCheck"><input type="checkbox" id="lrCheck" disabled><span>I liked and reposted the post</span></label>
+              <p class="err" id="lrErr"></p>
+              <div class="row"><button class="btn" id="lrOk" type="button" disabled>Confirm and continue</button></div>
+            </div>
+          </div>
+          <div class="task locked" data-step="4">
+            <div class="task-head"><div class="task-no"><b>4</b></div><div><h3>Comment on the post</h3><p class="sub">Drop a comment, then paste the link to your comment.</p></div></div>
+            <p class="done-line">Comment verified.</p>
+            <form class="task-body" id="cmForm" novalidate>
+              <div class="row"><a class="btn sky" id="cmBtn" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Comment on X</a></div>
+              <p class="mini">After posting, open your comment, tap Share, copy the link and paste it below. It must be your own comment from the username you saved.</p>
+              <label class="lbl" for="cmLink">Your comment link</label>
+              <input class="inp" id="cmLink" name="cmLink" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="https://x.com/yourname/status/1234567890">
+              <p class="err" id="cmErr"></p>
+              <div class="row"><button class="btn" type="submit">Verify comment</button></div>
+            </form>
+          </div>
+          <div class="task locked" data-step="5">
+            <div class="task-head"><div class="task-no"><b>5</b></div><div><h3>Your EVM wallet</h3><p class="sub">Where your Chapri will live. Double check it.</p></div></div>
+            <form class="task-body" id="walletForm" novalidate>
+              <label class="lbl" for="wallet">EVM wallet address</label>
+              <input class="inp" id="wallet" name="wallet" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="0x..." maxlength="42">
+              <p class="err" id="walletErr"></p>
+              <div class="row"><button class="btn lime" type="submit" id="walletBtn">Submit and join Chapri</button></div>
+            </form>
+          </div>
+        </div>
+        <div class="success" id="success" hidden>
+          <img src="assets/nft/1512.webp" alt="A happy Chapri">
+          <span class="pixel">Whitelist submitted</span>
+          <h3>Congrats! You are officially a Chapri.</h3>
+          <p>Welcome to the Chapri project. We will announce the free mint date on X very soon. GTD access will be decided by a raffle, so stay tuned.</p>
+          <div class="summary" id="summary"></div>
+          <div class="row" style="justify-content:center">
+            <a class="btn" id="shareBtn" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Share on X</a>
+            <a class="btn white" href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">Turn on notifications</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo"><span>CHAPRI</span></span>
+    <span class="pixel">Free mint &middot; 3,000 Chapris &middot; Robinhood Chain</span>
+    <span class="disclaimer">&copy; 2026 Chapri. Made just for fun. Chapri is a meme NFT only. It is not part of any other project, and there is no profit to be made from it. <a href="https://x.com/CHAPRINFT_" target="_blank" rel="noopener">@CHAPRINFT_</a></span>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/zoo.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
